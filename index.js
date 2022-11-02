@@ -58,16 +58,75 @@ document.body.append(title)
 document.body.append(button)
 
 //Destructuring
+//Destructuring de objetos
 const userDes = {
     name: 'Brenda',
     age: '22'
 }
 
 function printInfo(user){
-    return '<h1>Hola '+user.name+'</h1>'
+    const {name, age} = user
+
+    console.log(name, age);
+    return '<h1>Hola '+name+'</h1>'
 }
 
 console.log(printInfo(userDes))
 
 document.body.innerHTML = printInfo(userDes)
+
+//Funciones anonimas
+//Funcion sin nombre
+console.log(function (){
+    return 'Starting...'
+}())
+
+const background2 = 'red'
+const color = 'white'
+
+//return en funciones
+const isAuthorized = true
+
+const button2 = document.createElement('button')
+button2.innerText = 'click me'
+//String literals
+button2.style = `background: ${isAuthorized ? background2 : 'blue'}; color: ${color}`
+
+
+
+button2.addEventListener('click', () => {
+    if(isAuthorized){
+        return alert('esta autorizado')
+    }
+        
+    alert('no esta autorizado')
+    
+})
+
+document.body.append(button2)
+
+//arrow functions
+
+/*
+const add = (x,y) => {
+    return x + y
+}
+*/
+
+//inline arrow functions
+const showText = () => 'Hola mundo'
+const showNumber = () => 22;
+const showBoolean = () => true;
+const showArray = () => [1,2,3]
+const showObject = () => ({name: 'Brenda'})
+
+console.log(showText())
+console.log(showNumber())
+console.log(showBoolean())
+console.log(showArray())
+console.log(showObject())
+
+//arrat methods
+
+
 
