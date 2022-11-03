@@ -126,7 +126,65 @@ console.log(showBoolean())
 console.log(showArray())
 console.log(showObject())
 
-//arrat methods
+//array methods
+const nombres = ['brenda','edith','carlos']
+const newNombres = ['karim', 'juan', 'paco']
 
+for (let index = 0; index < nombres.length; index++) {
+    const element = nombres[index];
+    console.log(element)
+}
 
+nombres.forEach(function(nombre){
+    console.log(nombre)
+})
 
+const newNames = nombres.map(function(nombress){
+    return `Hola ${nombress}`
+})
+
+const nameFound = nombres.find(function(nombresss){
+    if(nombresss === 'brenda'){
+        return nombresss
+    }
+})
+
+const nameFilter = nombres.filter(function(nombrees){
+    if(nombrees !== 'carlos'){
+        return nombrees
+    }
+})
+
+console.log(newNames)
+console.log(nameFound)
+console.log(nameFilter)
+console.log(nombres.concat(newNombres))
+
+//Spread operator
+console.log([...nombres,...newNombres])
+
+const usuario = {
+    name: "Brenda",
+    lastname: "Perez"
+}
+
+const direccion = {
+    street: "main street 123123",
+    city: "cdmx"
+}
+
+const userInfo = {
+    ...usuario,
+    ...direccion
+}
+
+console.log(userInfo)
+
+//ecmascript modules
+import {addFunction, multiply,active,points,titleAdd} from './add.js'
+
+console.log(addFunction(20,12))
+console.log(multiply(3,4))
+console.log(active,points,title)
+
+//optional chaining
